@@ -11,7 +11,7 @@ if (${CMAKE_Fortran_COMPILER_ID} MATCHES GNU)
     set(CMAKE_Fortran_FLAGS_DEBUG "${CMAKE_Fortran_FLAGS_DEBUG} -fbounds-check --coverage")
 
 elseif(${CMAKE_Fortran_COMPILER_ID} MATCHES Intel)
-    set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -g -traceback -warn errors warn all")
+    set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -traceback -warn errors warn all")
     set(CMAKE_Fortran_FLAGS_RELEASE "${CMAKE_Fortran_FLAGS_RELEASE} -warn noerrors -xHost")
     set(CMAKE_Fortran_FLAGS_DEBUG "${CMAKE_Fortran_FLAGS_DEBUG} -check all")
 
