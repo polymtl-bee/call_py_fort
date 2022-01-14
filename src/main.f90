@@ -15,7 +15,15 @@
 !! See the License for the specific language governing permissions and
 !! limitations under the License.
 
-PROGRAM call_py_fort
-    USE call_py_fort_mod
-
-END PROGRAM
+program example
+    use callpy_mod
+    implicit none
+    
+    real(8) :: a(10)
+    a = 1.0
+    call set_state("a", a)
+    call call_function("builtins", "print")
+    ! read any changes from "a" back into a.
+    call get_state("a", a)
+    
+    end program example
