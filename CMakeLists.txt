@@ -5,9 +5,6 @@ project(callpy)
 
 include(CTest)
 
-set(CMAKE_C_COMPILER       gcc)
-set(CMAKE_Fortran_COMPILER gfortran)
-
 if (${CMAKE_Fortran_COMPILER_ID} MATCHES GNU)
     set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -g -Wall -Wextra -fimplicit-none -fbacktrace")
     set(CMAKE_Fortran_FLAGS_RELEASE "${CMAKE_Fortran_FLAGS_RELEASE} -Wno-error")
