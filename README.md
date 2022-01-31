@@ -1,3 +1,35 @@
+# For Polymtl-bee
+
+This section describes how to build call_py_fort on windows.
+
+## Compile call_py_fort on Windows
+
+First, install Intel Fortran and C++ compilers (https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html).
+
+To build this library, the dependencies listed in the [Installation](##Installation) section except for pFUnit must be installed. pFUnit is a unit testing framework for Fortran (https://github.com/Goddard-Fortran-Ecosystem/pFUnit). In an ideal world, one should run the tests that are included in call_py_fort (that relies on pFUnit) to verify that everything went according to plan but to do so pFunit must be installed on the system. To build and install pFUnit on Windows is not a walk in the park and it is not the purpose of this documentation, so we will just toss it aside.
+
+The build system Ninja is also required for the build.
+
+In summary, these are the dependecies required to build and run call_py_fort on Windows:
+
+    1. python (3+) with numpy and cffi
+    2. cmake (>=3.4+)
+    3. Intel Fortran and C++ compilers (https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html)
+    4. Ninja (https://ninja-build.org/)
+
+Take notes that if Visual Studio Community is installed on your system cmake and Ninja might be already installed. You can install those dependecies (except for the Intel compilers) with the package manager chocolatey (https://community.chocolatey.org/) or by hand.
+
+Once everything is installed, open the Intel OneAPI command prompt and go to the call_py_fort directory (you mmight need to open the command prompt with admistrative privilege to complete the compilation). You can compile call_py_fort using 
+    
+    mkdir build
+    cd build 
+    cmake -G Ninja ..
+    ninja
+
+All the compiled files are located in
+
+    call_py_fort/build/src/
+
 # call_py_fort
 
 ![status](https://github.com/VulcanClimateModeling/call_py_fort/workflows/Check/badge.svg)
